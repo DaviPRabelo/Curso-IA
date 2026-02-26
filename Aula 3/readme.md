@@ -21,16 +21,24 @@ O material aborda os tópicos essenciais de Machine Learning de forma prática e
   
 - **Preparação de Dados**
   - Análise exploratória de dados (EDA)
-  - Tratamento de valores ausentes
-  - Codificação de variáveis categóricas
-  - Feature engineering e seleção de features
+  - Tratamento de valores ausentes (SimpleImputer)
+  - Codificação de variáveis categóricas (OneHotEncoder)
+  - Seleção de features
+    - Métodos de filtro (SelectKBest, ANOVA F-value, Informação Mútua)
+    - Métodos wrapper (RFE - Recursive Feature Elimination)
+    - Métodos embedded (importância em árvores)
   - Escalonamento de dados
+    - MinMaxScaler (normalização 0-1)
+    - StandardScaler (padronização μ=0, σ=1)
+    - RobustScaler (robusto a outliers)
+  - Pipeline e ColumnTransformer para automação
   
 - **Modelagem e Validação**
   - Divisão treino/validação/teste
   - Validação cruzada (K-Fold, StratifiedKFold)
-  - Modelos clássicos: Regressão Linear, KNN, Árvores de Decisão, SVM, Naive Bayes, Random Forest
+  - Modelos clássicos: Random Forest, Regressão Linear, KNN, Árvores de Decisão
   - Avaliação de modelos com métricas apropriadas
+  - Pipeline completo (pré-processamento + modelagem)
   
 - **Otimização e Interpretabilidade**
   - Grid Search e Random Search para otimização de hiperparâmetros
@@ -94,12 +102,24 @@ O material aborda os tópicos essenciais de Machine Learning de forma prática e
 
 Durante a aula, trabalhamos com datasets clássicos:
 
-- **Iris** – classificação de espécies de flores (scikit-learn)
+  - 4 features numéricas (medidas de sépalas e pétalas)
+  - 3 classes balanceadas
+  - Usado para demonstrar seleção de features e escalonamento
+  
 - **California Housing** – regressão de preços de imóveis (scikit-learn)
+  - Múltiplas features numéricas
+  - Problema de regressão
+  
+- **Titanic** – classificação de sobrevivência (Seaborn)
+  - Contém dados ausentes e variáveis categóricas
+  - Ideal para demonstrar pipelines completos com ColumnTransformer
+  - Features numéricas (age, fare, pclass) e categóricas (sex, embarkedlearn)
 - **Digits** – reconhecimento de dígitos manuscritos (scikit-learn)
-
-Todos os datasets são carregados diretamente via código, sem necessidade de download manual.
-
+Seleção de Features** – Compare diferentes métodos (SelectKBest, RFE, importância) em um mesmo dataset
+3. **Escalonamento** – Teste MinMaxScaler vs StandardScaler vs RobustScaler e compare o impacto no desempenho
+4. **Pipeline Completo** – Crie um pipeline end-to-end com pré-processamento + modelagem + avaliação
+5. **Comparação de Modelos** – Treine múltiplos modelos e compare desempenho
+6
 ---
 
 ## 📝 Exercícios Propostos
@@ -130,12 +150,3 @@ Ao término da aula, pratique com os seguintes exercícios:
 [![GitHub](https://img.shields.io/badge/GitHub-alvarosamp-181717?style=flat&logo=github)](https://github.com/alvarosamp)
 
 
----
-
-## 📄 Licença
-
-Este projeto está licenciado sob a licença MIT.
-
----
-
-**Bons estudos!** 🚀
