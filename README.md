@@ -1,96 +1,149 @@
-# Curso de Inteligência Artificial
+# Curso de Inteligência Artificial 🤖
 
-Bem-vindo ao curso de **Inteligência Artificial**! 🤖
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/alvarosamp/Curso-IA)
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue?logo=python)
+![Status](https://img.shields.io/badge/status-em%20desenvolvimento-yellow)
+![Licença](https://img.shields.io/badge/licença-MIT-green)
 
-Neste curso, você aprenderá os fundamentos e técnicas práticas de IA e Machine Learning, desde conceitos básicos até aplicações avançadas em visão computacional.
-
-## 📚 Sobre o Curso
-
-Duração: **64 horas**
-
-Este é um curso **prático e imersivo** que combina teoria com muitos projetos reais. Você aprenderá a:
-
-- 🧠 Entender os conceitos fundamentais de IA, Machine Learning e Deep Learning
-- 🐍 Programar em Python aplicado a Data Science
-- 📊 Analisar e processar dados com ferramentas profissionais
-- 🤖 Treinar modelos de Machine Learning e Deep Learning
-- 👁️ Trabalhar com visão computacional e detecção de objetos
-- ⚡ Otimizar modelos para dispositivos embarcados
-- 🚀 Desenvolver um projeto final completo
-
-## 🎯 Estrutura do Curso
-
-O curso é dividido em **7 módulos**, cada um com conteúdo teórico, exercícios práticos e uma atividade final:
-
-### 1. **Fundamentos de IA e Preparação do Ambiente** (8h)
-Conceitos essenciais de IA, configuração de ferramentas e versionamento de código.
-
-### 2. **Python Aplicado a Data Science** (8h)
-Ferramentas e técnicas para análise de dados com Python.
-
-### 3. **Fundamentos de Machine Learning** (16h)
-Algoritmos clássicos de ML, pré-processamento e avaliação de modelos.
-
-### 4. **Deep Learning** (12h)
-Redes Neurais Artificiais e introdução ao TensorFlow.
-
-### 5. **Visão Computacional** (12h)
-Processamento de imagens, CNNs e detecção de objetos.
-
-### 6. **Quantização e Otimização** (4h)
-Otimizar modelos para dispositivos com recursos limitados.
-
-### 7. **Projeto Final** (4h)
-Desenvolver um pipeline completo de IA, do começo ao fim.
-
-## 📋 Pré-requisitos
-
-- Conhecimento básico de programação (Python é um diferencial, mas não é obrigatório)
-- Computador com acesso à internet
-- Disposição para aprender e experimentar! 💪
-
-## 🚀 Como Começar
-
-### Preparação Inicial
-
-1. Clone ou faça download deste repositório
-2. Configure seu ambiente virtual (ensinamos no módulo 1)
-3. Instale as dependências necessárias
-4. Abra o primeiro módulo e comece!
-
-### Recursos Necessários
-
-Você precisará de:
-- Python 3.8+ instalado
-- Um editor de código (recomendamos VS Code)
-- Acesso a Jupyter Notebooks (para os exercícios)
-
-## 📚 Conteúdo Disponível
-
-Todos os materiais estão organizados por módulo:
-
-```
-Aula 1/ - Fundamentos de IA
-Aula 2/ - Python & Bibliotecas
-... (materiais dos demais módulos)
-```
-
-## 🔗 Repositório Principal
-
-Materiais complementares e código de referência:
-👉 https://github.com/alvarosamp/Treinamento_python
-
-## 💡 Metodologia
-
-- ✅ **Aprender fazendo**: Muitos exercícios práticos
-- ✅ **Projetos reais**: Trabalhar com datasets verdadeiros
-- ✅ **Progressão gradual**: Do básico ao avançado
-- ✅ **Projeto final**: Aplicar tudo que aprendeu
-
-## 📞 Dúvidas?
-
-Dúvidas durante o curso? Não hesite em perguntar! 📧
+Repositório do curso prático de **Inteligência Artificial**, cobrindo desde os fundamentos até aplicações reais com visão computacional e deep learning.
 
 ---
 
-**Vamos embarcar nesta jornada de IA juntos!** 🚀 
+## � Sobre o Curso
+
+**Carga horária total:** 64 horas  
+**Nível:** Graduação / Pós-graduação  
+**Pré-requisitos:** Lógica de programação básica. Python é um diferencial, mas não obrigatório.
+
+O curso é **hands-on**: cada módulo combina teoria, exemplos comentados em Jupyter Notebook e uma atividade prática com dataset real.
+
+---
+
+## 🗂️ Estrutura do Repositório
+
+```
+Curso-IA/
+├── Aula 1/   # Fundamentos de IA + Ambiente + Git
+├── Aula 2/   # Python & Bibliotecas de Data Science
+├── Aula 3/   # Fundamentos de Machine Learning
+├── Aula 4/   # Deep Learning (MLP, TensorFlow, PyTorch)
+├── Aula 5/   # Visão Computacional (OpenCV, CNN, YOLOv8)
+└── runs/     # Resultados de treinos YOLO (gerado automaticamente)
+```
+
+---
+
+## 📚 Módulos
+
+### Aula 1 — Fundamentos de IA + Ambiente + Git `(8h)`
+
+- O que é IA, ML e Deep Learning
+- Aprendizado supervisionado vs. não supervisionado
+- Configuração de ambiente virtual (`venv`)
+- Git e GitHub: commits semânticos, boas práticas
+- **Exemplo prático:** Iris dataset — Decision Tree e K-Means
+
+### Aula 2 — Python Aplicado a Data Science `(8h)`
+
+- Revisão de Python: listas, dicionários, list comprehensions
+- **NumPy:** arrays, reshape, operações vetorizadas
+- **Pandas:** DataFrames, filtragem, groupby, tratamento de NaN
+- **Matplotlib:** histogramas, barras, scatter, boxplot
+- **Atividade:** EDA completa no Iris dataset
+
+### Aula 3 — Fundamentos de Machine Learning `(16h)`
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/alvarosamp/Curso-IA/blob/main/Aula%203/Aula_3.ipynb)
+
+- Tipos de aprendizado e trade-off viés-variância
+- Pré-processamento: `SimpleImputer`, `OneHotEncoder`, scalers (`MinMax`, `Standard`, `Robust`)
+- Seleção de features: `SelectKBest`, RFE, importância em árvores
+- Modelos: Random Forest, Regressão Linear, KNN, Árvore de Decisão
+- Validação cruzada (K-Fold, StratifiedKFold) e métricas
+- Otimização de hiperparâmetros: Grid Search e Random Search
+- Pipelines com `ColumnTransformer`
+
+### Aula 4 — Deep Learning `(12h)`
+
+- Perceptron: modelo matemático e limitação (XOR)
+- MLP: forward/backpropagation, inicialização de pesos
+- Funções de ativação: Sigmoid, tanh, ReLU, Softmax
+- Funções de perda: MSE, Cross-Entropy
+- Otimizadores: SGD, Momentum, Adam
+- **TensorFlow/Keras:** compilação e treinamento de modelos
+- **PyTorch:** visão geral e comparação com TensorFlow
+
+### Aula 5 — Visão Computacional `(12h)`
+
+- Processamento de imagens com **OpenCV**: leitura, redimensionamento, normalização, filtros, Canny
+- **CNNs:** camadas convolucionais, pooling, arquiteturas clássicas (LeNet, AlexNet, VGG, ResNet)
+- **Transfer Learning** com MobileNetV2 (feature extraction e fine-tuning)
+- Métricas de detecção: IoU, mAP, curva Precision–Recall
+- **Roboflow:** gerenciamento e exportação de datasets
+- **YOLOv8 (Ultralytics):** treinamento, validação e inferência
+- **Atividade prática:** classificação de dígitos no MNIST (≥3 arquiteturas, comparação de otimizadores)
+
+### Aulas 6 e 7 — Quantização, Otimização & Projeto Final `(8h)`
+
+- Otimização de modelos para dispositivos embarcados (em breve)
+- Projeto final: pipeline completo de IA do início ao fim
+
+---
+
+## 🚀 Como Começar
+
+### 1. Clonar o repositório
+
+```bash
+git clone https://github.com/alvarosamp/Curso-IA.git
+cd Curso-IA
+```
+
+### 2. Criar e ativar o ambiente virtual
+
+```bash
+python -m venv ia_env
+
+# macOS/Linux
+source ia_env/bin/activate
+
+# Windows
+ia_env\Scripts\activate
+```
+
+### 3. Instalar as dependências
+
+```bash
+pip install numpy pandas matplotlib scikit-learn tensorflow ultralytics opencv-python
+```
+
+### Alternativa: Google Colab
+
+Clique no badge **Open in Colab** no topo de cada módulo. Não é necessário instalar nada localmente.
+
+---
+
+## 🛠️ Tecnologias
+
+| Biblioteca | Uso principal |
+|---|---|
+| `numpy` | Operações numéricas e arrays |
+| `pandas` | Manipulação de dados tabulares |
+| `matplotlib` / `seaborn` | Visualização de dados |
+| `scikit-learn` | ML clássico, pré-processamento, métricas |
+| `tensorflow` / `keras` | Redes neurais e deep learning |
+| `pytorch` | Deep learning (visão geral) |
+| `opencv-python` | Processamento de imagens |
+| `ultralytics` | YOLOv8 — detecção de objetos |
+
+---
+
+## 🔗 Links Úteis
+
+- 📘 Repositório de referência Python: [github.com/alvarosamp/Treinamento_python](https://github.com/alvarosamp/Treinamento_python)
+- 🏷️ Dataset management: [roboflow.com](https://roboflow.com)
+- 🔬 YOLOv8 docs: [docs.ultralytics.com](https://docs.ultralytics.com)
+
+---
+
+*Última atualização: Março 2026*
