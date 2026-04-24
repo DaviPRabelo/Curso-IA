@@ -1,0 +1,85 @@
+version: "3.8"
+
+services:
+
+  # ──────────────────────────────────────────────────
+  # 1. Servidor MLflow — tracking + model registry
+  # ──────────────────────────────────────────────────
+  mlflow_server:
+    image: python:3.10-slim
+    container_name: mlflow_server
+    ports:
+      - "5000:5000"
+    volumes:
+      - mlflow_data:/mlflow
+    command: >
+      bash -c "pip install mlflow==2.14.1 --quiet &&
+      mlflow server
+      --host 0.0.0.0
+      --port 5000
+      --backend-store-uri sqlite:///mlflow/mlflow.db
+      --default-artifact-root /mlflow/artifacts"
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:5000/health || exit 1"]
+      interval: 15s
+      timeout: 5s
+      retries: 10
+      start_period: 60s
+    networks:
+      - ml_network
+
+  # ──────────────────────────────────────────────────
+  # 2. Treino — registra o modelo no Model Registry
+  # ──────────────────────────────────────────────────
+  ml_app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ml_app
+    depends_on:
+      mlflow_server:
+        condition: service_healthy
+    environment:
+      - MLFLOW_TRACKING_URI=http://mlflow_server:5000
+    volumes:
+      - ./plots:/app/plots
+    command: ["python", "mlf.py", "train"]
+    networks:
+      - ml_network
+
+  # ──────────────────────────────────────────────────
+  # 3. MLflow Model Serving — REST API de predição
+  # ──────────────────────────────────────────────────
+  mlflow_serving:
+    image: python:3.10-slim
+    container_name: mlflow_serving
+    ports:
+      - "8080:8080"
+    depends_on:
+      mlflow_server:
+        condition: service_healthy
+    environment:
+      - MLFLOW_TRACKING_URI=http://mlflow_server:5000
+    command: >
+      bash -c "pip install mlflow==2.14.1 tensorflow==2.16.1 --quiet &&
+      mlflow models serve
+      --model-uri models:/diabetes_model/Production
+      --host 0.0.0.0
+      --port 8080
+      --no-conda"
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:8080/health || exit 1"]
+      interval: 15s
+      timeout: 5s
+      retries: 10
+      start_period: 60s
+    networks:
+      - ml_network
+
+volumes:
+  mlflow_data:
+    driver: local
+
+networks:
+  ml_network:
+    driver: bridge
