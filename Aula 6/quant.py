@@ -10,7 +10,7 @@ import matplotlib.patches as mpatches
 from sklearn.model_selection import train_test_split
 from sklearn import metrics
 
-MODEL_PATH    = "modelo_diabetes.h5"
+MODEL_PATH    = "modelo_diabetesv2.h5"
 SCALER_PATH   = "scaler.pkl"
 DATASET_PATH  = "diabetes_dataset_preprocessed.csv"
 CALIB_SAMPLES = 200
